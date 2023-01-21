@@ -1,0 +1,86 @@
+@import "../../src/style.scss";
+
+
+
+.Navbar{
+    @include themify($themes){
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    border-bottom: 1px solid themed("border");
+    justify-content: space-between;
+    height: 50px;
+    position: sticky;
+    top: 0;
+    background-color: themed("bg");
+    color: themed("textColor");
+    z-index: 999;
+    .left1{
+        display: flex;
+        align-items: center;
+        gap: 30px;
+        span{
+            font-weight: bolder;
+            font-size: 20px;
+            color: themed("logo");
+        }
+        .search{
+            display: flex;
+            align-items: center;
+            border: 1px solid themed("border");
+            border-radius: 5px;
+            padding: 5px;
+            input{
+                width: 500px;
+                border: none;
+                padding: 5px;
+                background-color: transparent;
+                color: themed("textColor");
+                @include mobile{
+                    display: none;
+                }
+
+                @include tablet{
+                    width: 200px;
+                }
+
+            }
+        }
+        
+    }
+    .right1{
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        @include mobile{
+            display: none;
+        }
+        .user{
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 500;
+
+            @include tablet{
+                display: none;
+            }
+
+            img{
+                border-radius: 50%;
+                width: 30px;
+                height: 30px;
+                object-fit: cover;
+            }
+            span{
+                font-weight: 500;
+            }
+        }
+    }
+    }
+
+
+
+
+
+
+}

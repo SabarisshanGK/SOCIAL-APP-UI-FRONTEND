@@ -1,0 +1,144 @@
+@import '../../style.scss';
+
+.post{
+    @include themify($themes){
+
+        -webkit-box-shadow: 0px 0px 25px -10px rgba(0, 0, 0, 0.38);
+        -moz-box-shadow: 0px 0px 25px -10px rgba(0, 0, 0, 0.38);
+        box-shadow: 0px 0px 25px -10px rgba(0, 0, 0, 0.38);
+        border-radius: 20px;
+        background-color: themed("bg");
+        color: themed("textColor");
+        // @include mobile{
+        //     max-height:600px;
+        // }
+       
+        
+        
+
+    .container{
+        padding: 20px;
+        @include mobile{
+            padding: 10px;
+        }
+        
+        .user{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            
+            .userInfo{
+                display: flex;
+                gap: 20px;
+                img{
+                    width: 40px;
+                    height: 40px;
+                    border-radius: 50%;
+                    object-fit: cover;
+                }
+                .details{
+                    display: flex;
+                    flex-direction: column;
+                    position: relative;
+
+                    .name{
+                        font-weight: 500;
+                        
+                    }
+                    #verify{
+                        position: absolute;
+                        top:0px;
+                        margin-left: 10px;
+                        color: #6fbaf8;
+                    }
+                    .Date{
+                        font-size: 12px;
+                    }
+                }
+                
+            }
+        }
+
+        .content{
+            margin: 20px 0px;
+
+            img{
+                width: 100%;
+                min-height: 500px;
+                object-fit: cover;
+                margin-bottom: 20px;
+
+                @include mobile{
+                    min-height:250px;
+                }
+            }
+        }
+        .info{
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            
+           
+            .item{
+                display: flex;
+                gap: 10px;
+                align-items: center;
+                cursor: pointer;
+               @include mobile{
+                gap:5px;
+                
+               }
+
+                .like-button{
+                    display: flex;
+                    align-items: center;
+
+                    
+                    
+                    .heart-bg{
+                        background: rgba(255, 192, 200, 0);
+                        width: 60px;
+                        height: 60px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        transition: all 100ms ease;
+                        border-radius: 50%;
+
+                        &:hover{
+                            background: rgba(255, 192, 200, 0.7); 
+                        }
+
+                        .heart-unliked{
+                            background: url('../../images/heart.png');
+                            background-position: left;
+                            position: absolute;
+                            cursor: pointer;
+                            height: 100px;
+                            width: 100px;
+                            object-fit: cover;
+                            
+                            }
+                        
+                        .heart-liked{
+                            background: url('../../images/heart.png');
+                            background-position: left;
+                            position: absolute;
+                            cursor: pointer;
+                            height: 100px;
+                            width: 100px;
+                            object-fit: cover;
+                            
+                            animation: like-anim 0.8s steps(28) forwards;
+                        }
+                        @keyframes like-anim {
+                            to{
+                                background-position: right;
+                            }
+                    }
+                }
+            }
+        }
+      }
+      }
+}}
